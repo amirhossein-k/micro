@@ -9,8 +9,13 @@ import Navbar from './components/navbar/Navbar';
 import { HeroUIProvider } from '@heroui/react';
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const [queryClient] = useState(() => new QueryClient());
-
+const [queryClient] = useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity, // برای جلوگیری از درخواست‌های غیرضروری در SSG
+      },
+    },
+  }));
   return (
     <QueryClientProvider client={queryClient}>
            {/* <UserProvider>  */}

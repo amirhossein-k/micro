@@ -117,3 +117,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+export const dynamic = 'force-dynamic'; // رندر در زمان درخواست (SSR)
