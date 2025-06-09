@@ -39,6 +39,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       console.error("خطا در خروج:", error);
     }
   };  
+
   const refreshUser = useCallback(async () => {
     setLoading(true);
     try {
