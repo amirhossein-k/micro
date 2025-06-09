@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  email         String   @unique
+  password      String?
+  name          String?
+  posts         Post[]
+  isVerfied     Boolean  @default(false)
+  listordershop String[]
+  address       Adress[]
+  admin         Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
+
+model Adress {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  location String
+  state    String
+  zipcode  String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId   String @db.ObjectId
+}
+
+model Post {
+  id           String         @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  price        Float
+  content      String?
+  tableContent String?
+  count        Float
+  countproduct Float
+  priceOffer   Float
+  listProperty ListProperty[]
+  tags         String[]
+  review       ReviewList[]
+  productImage ProductImage[]
+  published    Boolean        @default(false)
+  author       User           @relation(fields: [authorId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  authorId     String         @db.ObjectId
+  categoryList CategoryList[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model ListProperty {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  property    String
+  PropertyOwn Post   @relation(fields: [ownerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ownerId     String @db.ObjectId
+}
+
+model ReviewList {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  reviewText String
+  name       String
+  email      String
+  rating    Float
+  createdAt  DateTime @default(now())
+  reviewOwn  Post     @relation(fields: [ownerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ownerId    String   @db.ObjectId
+}
+
+model CategoryList {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  category    String
+  CategoryOwn Post   @relation(fields: [ownerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ownerId     String @db.ObjectId
+}
+
+model ProductImage {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  defaultImage Boolean
+  childImage   String
+  fileKey      String?
+  ImageOwn     Post?   @relation(fields: [ownerId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ownerId      String? @db.ObjectId
+  //   Products Products? @relation(fields: [productId],references: [id],onDelete: Cascade, onUpdate: Cascade) 
+  //   productId String?
+}
