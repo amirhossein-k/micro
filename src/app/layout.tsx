@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import { Providers } from "@/app/Providers";
-// import { UserProvider } from "@/context/UserContext2";
+import { Providers } from "@/app/Providers";
+import { UserProvider } from "@/context/UserContext2";
 import 'animate.css/animate.min.css';
 // import "react-image-gallery/styles/css/image-gallery.css";
 import "swiper/css";
@@ -45,12 +45,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
             <Toaster position="top-center" />
-            {/* <UserProvider> */}
-      {/* <Providers> */}
+            <UserProvider>
+      <Providers>
           {children}
          
-        {/* </Providers> */}
-        {/* </UserProvider> */}
+        </Providers>
+        </UserProvider>
 
       </body>
     </html>
