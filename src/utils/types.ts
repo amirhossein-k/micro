@@ -110,11 +110,11 @@ export interface Item {
   key:string
 }
 
-export interface Contact extends Item {
+export interface Contactt extends Item {
   path: string;
 }
 
-export type FooterItem = Omit<Contact, "icon" | "subtitle">;
+export type FooterItem = Omit<Contactt, "icon" | "subtitle">;
 
 export interface ExperienceItem {
   titleItem: string;

@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // import CartDrawer from '@/components/cart/CartDrawer';
-import Navbar from './components/navbar/Navbar';
+// import Navbar from './components/navbar/Navbar';
 // import { UserProvider } from '@/context/UserContext2';
 import { HeroUIProvider } from '@heroui/react';
 
@@ -21,7 +21,7 @@ const [queryClient] = useState(() => new QueryClient({
            {/* <UserProvider>  */}
            <HeroUIProvider>
            
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         </HeroUIProvider>
 

@@ -20,6 +20,8 @@ import Header from "@/components/header/Header";
 import Nav from "@/components/nav/Nav";
 import About from "@/components/about/About";
 import Expreience from "@/components/exprerience/Expreience";
+import Portfolio from "@/components/portfolio/Portfolio";
+import Contact from "@/components/contact/Contact";
 
 
 const categoryLayout: CATEGORYLayout[] = [
@@ -105,24 +107,24 @@ const categoryLayout: CATEGORYLayout[] = [
 export default async function Home() {
 
 // گرفتن محصولات تخفیف‌دار
-  const offerList = await GetProductOffer();
-  if ('error' in offerList) {
-    return (
-      <div className="text-red-500 text-center p-4">
-        خطا در بارگذاری محصولات تخفیف‌دار: {offerList.error}
-      </div>
-    );
-  }
+  // const offerList = await GetProductOffer();
+  // if ('error' in offerList) {
+  //   return (
+  //     <div className="text-red-500 text-center p-4">
+  //       خطا در بارگذاری محصولات تخفیف‌دار: {offerList.error}
+  //     </div>
+  //   );
+  // }
   // محصولات جدید
-  const newList = await GetNewProducts()
-  if('error' in newList){
-    return(
-      <div className="text-red-500 text-center p-4">
-        خطا در بارگذاری محصولات جدید : {newList.error}
+  // const newList = await GetNewProducts()
+  // if('error' in newList){
+  //   return(
+  //     <div className="text-red-500 text-center p-4">
+  //       خطا در بارگذاری محصولات جدید : {newList.error}
 
-      </div>
-    )
-  }
+  //     </div>
+  //   )
+  // }
 
   // const productsOffer : FormattedPostType[] = offerList
   // const newProducts : FormattedPostType[] = newList
@@ -135,6 +137,9 @@ export default async function Home() {
      <Nav />
            <About />
                  <Expreience />
+      <Portfolio />
+      <Contact />
+
 
 
     </div>

@@ -79,7 +79,7 @@ const exprerienceItem: ExperienceItem[] = [
 
 const Expreience = () => {
   return (
-    <section id="experience my-3">
+    <section id="experience" className="my-3">
       <h5 className="text-center text-color-light font-medium my-">
        میکروگرین، فقط یک سبزی نیست؛ تجربه‌ای نو از تغذیه، سلامت و زندگی سبز است
       </h5>
