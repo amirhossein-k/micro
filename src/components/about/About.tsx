@@ -27,13 +27,13 @@ const itemAbout: AboutItem[] = [
 
 const About = () => {
   return (
-    <section id="about" className="mt-32">
+    <section id="about" className="my-32 ">
       {/* <h5 className="text-center text-color-light font-medium ">درباره ما</h5> */}
       <h2 className="text-color-priamry text-center mb-12 text-xl font-semibold">
        درباره ما
       </h2>
       <div className="container grid grid-cols-1 xl:grid-cols-2 sm:grid-cols-2 gap-10 place-items-center lg:place-items-center md:grid-cols-about md:gap-[5%] md:place-items-start ">
-        <div className=" rounded-[2rem] bg-gradient-to-r from-[#206d40] to-transparent grid h-fit w-[65%] md:mt-8 md:mx-auto md:mb-16 md:w-full sm:w-1/2 sm:mt-0 sm:mx-auto sm:mb-12">
+        <div className=" rounded-[2rem] bg-gradient-to-r from-[#206d40] to-transparent grid h-fit w-[65%] md:mt-8 md:mx-auto md:mb-16 md:w-full  lg:w-full  sm:w-full sm:mt-0 sm:mx-auto sm:mb-12">
           <div className="rounded-[2rem] overflow-hidden  rotate-12 hover:rotate-0 transition-all duration-500">
             <Image
               alt="about me"

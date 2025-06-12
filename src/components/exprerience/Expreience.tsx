@@ -86,27 +86,30 @@ const Expreience = () => {
       <h2 className=" text-color-priamry text-center mb-12 text-xl font-semibold">
 ویژگی ها
       </h2>
-      <div className="container grid lg:grid-cols-fr1 gap-8  grid-cols-1 ">
+      <div className="container grid lg:grid-cols-fr1 gap-2  grid-cols-1 ">
         {exprerienceItem.map((parent) => {
           return (
             <div
               key={parent.titleItem}
-              className="bg-[#0d4428] mx-4 py-10 px-20 rounded-[2rem] border border-transparent transition-all hover:bg-transparent hover:border-[rgba(77, 181, 255, 0.4)] hover:cursor-default "
+              className="bg-[#0d4428] mx-4 py-10 md:px-18 px-2 rounded-[2rem] border border-transparent transition-all hover:bg-transparent hover:border-[rgba(77, 181, 255, 0.4)] hover:cursor-default "
             >
               <h3 className="text-center mb-8 text-color-priamry">
                 {/* {parent.titleItem} */}
               </h3>
-              <div className="grid grid-cols-fr1 auto-rows-[6rem] gap-2">
+              <div className="grid    md:grid-cols-fr1 grid-cols-1 md:auto-rows-[6rem] auto-rows-[4rem] ">
                 {parent.titleItem === "مزیت ها"
                   ? parent.frontItem?.map((item) => {
                       return (
                         <article
                         key={item.subtitle}
-                        className="flex gap-5 ">
-                          {item.icon}
-                          <div className="">
+                        className="flex flex-row w-full h-[4rem]  gap-5 ">
+                          <div className=" gap-3 flex justify-center items-center w-full h-full">
+                         <div className="  ">
+                          
+                           {item.icon}
+                          </div>
                             <h4>{item.title}</h4>
-                            <small>{item.subtitle}</small>
+                            <small className=" text-lg md:text-base">{item.subtitle}</small>
                           </div>
                         </article>
                       );
@@ -114,12 +117,15 @@ const Expreience = () => {
                   : parent.backItem?.map((item) => {
                       return (
                         <article
-                          key={item.key}
-                        className="flex gap-4">
-                          {item.icon}
-                          <div className="">
+                        key={item.subtitle}
+                        className="flex flex-row w-full h-[4rem]  gap-5 ">
+                          <div className=" gap-3 flex justify-center items-center w-full h-full">
+                         <div className="  ">
+                          
+                           {item.icon}
+                          </div>
                             <h4>{item.title}</h4>
-                            <small>{item.subtitle}</small>
+                            <small className=" text-lg md:text-base">{item.subtitle}</small>
                           </div>
                         </article>
                       );

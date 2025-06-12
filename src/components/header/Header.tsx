@@ -33,7 +33,7 @@ const Header = () => {
           </Link>
         </div>
         {/* photo */}
-        <div className="absolute w-[330px] h-96 group left-[calc(53%_-_11rem)] bottom-0  md:left-[calc(50%_-_11rem)] md:bottom-10">
+        <div className="absolute w-[330px] h-96 group left-[calc(53%_-_11rem)] -bottom-10  md:left-[calc(50%_-_11rem)] md:bottom-10">
           <div className="absolute w-[350px] h-[370px] group-hover:bottom-0 transition-[bottom] duration-300 left-[calc(50%_-_11rem)] bottom-10 rounded-t-[12rem]  bg-gradient-to-b from-[#00cc66] to-transparent"></div>
           <Image alt="me" src={me} fill />
         </div>

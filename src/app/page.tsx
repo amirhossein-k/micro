@@ -22,6 +22,7 @@ import About from "@/components/about/About";
 import Expreience from "@/components/exprerience/Expreience";
 import Portfolio from "@/components/portfolio/Portfolio";
 import Contact from "@/components/contact/Contact";
+import Footerr from "@/components/footer/Footer";
 
 
 const categoryLayout: CATEGORYLayout[] = [
@@ -139,6 +140,7 @@ export default async function Home() {
                  <Expreience />
       <Portfolio />
       <Contact />
+      <Footerr />
 
 
 
