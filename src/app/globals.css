@@ -79,6 +79,7 @@ body {
   nav a.active {
     @apply bg-[var(--color-primary)] text-[var(--color-bg)];
   }
+  /*  */
 }
 
 @layer components {

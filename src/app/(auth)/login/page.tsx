@@ -6,6 +6,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { useUserContext } from '@/context/UserContext2';
 import { USERTYPE } from '@/utils/types';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -43,8 +44,9 @@ export default function LoginPage() {
       setPassword('');
       router.push(`/profile/${data.id}`);
     },
-    onError: (error: Error) => {
-      toast.error(error.message || 'خطا در ارتباط با سرور');
+    onError: (error: PrismaClientKnownRequestError ) => {
+      console.log(error.meta)
+      toast.error(  'خطا در ارتباط با سرور');
     },
   });
 
