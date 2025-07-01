@@ -33,7 +33,9 @@ export default function RegisterPage(){
     
     
     return(
-        <div className="max-w-md mx-auto text-black">
+      <div className=" w-full  h-screen flex justify-center items-center">
+
+         <div className="max-w-md mx-auto text-black bg-white rounded-lg px-2 py-3 w-full  ">
             <h1 className="text-center text-xl shadow-md my-2 py-2 "> فرم ثبت نام </h1>
             {errorMessage && (
         <div className="mb-4 text-red-500">
@@ -77,13 +79,16 @@ export default function RegisterPage(){
                 {pending ? 'در حال ثبت‌نام...' : 'ثبت‌نام'}
                    </button>
             </form>
-            <p className="flex flex-row-reverse mt-2">
+            <p className="flex flex-row-reverse mt-2 " >
                
-                <Link href="/login" className="text-blue-600 hover:underline">
+                <Link href="/login" className="text-blue-600 hover:underline hover:text-black">
           وارد شوید
         </Link>
             </p>
         </div>
+
+      </div>
+       
     )
 
 }

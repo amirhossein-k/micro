@@ -74,7 +74,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+          <div className=" w-full  h-screen flex justify-center items-center">
+
+
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md text-black w-full">
       <h1 className="text-2xl font-bold mb-6 text-center">ورود به حساب کاربری</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -112,11 +115,12 @@ export default function LoginPage() {
 
       <p className="mt-4 text-center">
         حساب ندارید؟{' '}
-        <Link href="/register" className="text-blue-600 hover:underline">
+        <Link href="/register" className="text-blue-600 hover:underline hover:text-black">
           ثبت‌نام کنید
         </Link>
       </p>
     </div>
+          </div>
   );
 }
 
